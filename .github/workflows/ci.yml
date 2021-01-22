@@ -8,9 +8,8 @@ jobs:
     name: Require Acorn
     strategy:
       matrix:
-        os: [ubuntu-latest]
         node: ["12.15.0", "12.16.0", "12.17.0", "13.0.0", "13.6.0", "13.7.0", "14.0.0", "15.0.0"]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
