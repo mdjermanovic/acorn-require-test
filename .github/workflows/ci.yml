@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+    branches: [main]
+
+jobs:
+  require_acorn:
+    name: Require Acorn
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: ["12.15.0", "12.16.0", "12.17.0", "13.0.0", "13.6.0", "13.7.0", "14.0.0", "15.0.0"]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node }}
+    - name: Install Packages
+      run: npm install
+    - name: Test
+      run: npm test
