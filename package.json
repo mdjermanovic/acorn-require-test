@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/mdjermanovic/acorn-require-test#readme",
   "dependencies": {
-    "acorn": "^8.0.4"
+    "acorn": "^8.0.5"
   }
 }
